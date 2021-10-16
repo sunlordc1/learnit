@@ -29,7 +29,7 @@ router.post('/register',async(req,res)=>{
         res.json({success:true,message:'User created successfuly',accessToken})
         }catch(error){
             console.log(error.message)
-            res.json({success:false,message:'Internal server error'})
+            res.status(500).json({success:false,message:'Internal server error'})
         }
 })
 //@route POST api/auth/login
