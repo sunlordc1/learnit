@@ -15,14 +15,19 @@ const Auth = ({authRoute}) => {
         <Spinner animation='border' variant='info'>
         </Spinner>
     )
-    else if(isAuthenticated) return <Redirect to='/dashboard'/>
-    else
-    form =  (
-        <>
-        {authRoute === 'login' && <LoginForm/>}
-        {authRoute === 'register' && <RegisterForm/>}
-        </>
-    )
+    else if (isAuthenticated){
+        console.log('authen r')
+        return <Redirect to='/dashboard'/>
+    }
+    else{
+        form =  (
+            <>
+            {authRoute === 'login' && <LoginForm/>}
+            {authRoute === 'register' && <RegisterForm/>}
+            </>
+        )
+    }
+   
     return (
         <>
             <div className="container">

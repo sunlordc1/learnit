@@ -21,9 +21,11 @@ const LoginForm = () => {
         event.preventDefault();
         try {
             const loginData = await loginUser(loginForm)
-            if(loginData.success) history.push('/dashboard')
+            if(loginData.success){
+                history.push('/dashboard')
+                console.log('hello')
+            } 
             else alert(loginData.message)
-            console.log(loginData)
         } catch (error) {
             console.log(error)
         }
