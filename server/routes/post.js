@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Post = require('../models/Post')
 //Middleware
-const verifyToken = require('../middlewares/auth')
+const verifyToken = require('../middleware/auth')
 
 //@route POST api/posts/create
 //@desc Get posts

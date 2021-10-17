@@ -4,11 +4,11 @@ const express = require('express')
 const mongoose = require('mongoose')
 const app = express();
 const PORT = 5000;
-
+const cors = require('cors')
 //For JSON !!!!
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-
+app.use(cors({origin: 'http://localhost:3000'}));
 //Router
 const authRouter = require('./routes/auth')
 const postRouter = require('./routes/post')
