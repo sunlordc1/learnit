@@ -21,7 +21,7 @@ router.get('/',verifyToken,async (req,res)=>{
 //@route POST api/posts/create
 //@desc Create Post
 //@access Private
-router.post('/create',verifyToken,async (req,res)=>{
+router.post('/',verifyToken,async (req,res)=>{
     const {title,description,url,status} = req.body;
     // Simple validation
     if(!title) return res.status(400).json({success:false,message:'Title is requqired'})

@@ -21,13 +21,13 @@ Content-Type: application/json
 
 POST http://localhost:5000/api/posts/create
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTZhNjE3M2UxOGQwODlhNjM2NmVhY2YiLCJpYXQiOjE2MzQzNzM4NzB9.CNk6zRNTix4CaMldAaF04_0jdxtENOwNe-_pG0xQGq8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTZhNjBjNTA2MmNjZjQwZGY2NzI2NGEiLCJpYXQiOjE2MzQ1NDAzNTh9.5wPuOwb-7iLVRzQPVNJf5_yyqnTTKtZET_US9aC_eQU
 
 {
     "title":"my first post",
     "description":"abc",
     "url":"google.com",
-    "status":"LEARNING"
+    "status":"LEARNED"
 
 }
 
