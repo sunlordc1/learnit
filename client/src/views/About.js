@@ -7,7 +7,7 @@ const About = () => {
             <Col className='text-center'>
                 <Button 
                     variants='primary' 
-                    href='https://www.youtube.com/</Col>'
+                    href='https://www.youtube.com/'
                     size='lg'
                 >
                     Visit my channel 
