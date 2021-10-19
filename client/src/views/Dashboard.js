@@ -9,13 +9,17 @@ import Row from "react-bootstrap/esm/Row"
 import Col from "react-bootstrap/esm/Col"
 import SinglePost from "../components/posts/SinglePost"
 import AddPostModal from "../components/posts/AddPostModal"
+import UpdatePostModal from "../components/posts/UpdatePostModal"
+import Toast from 'react-bootstrap/Toast'
 const Dashboard = () => {
     //Context 
     const {authState:{user:{username}}} = useContext(AuthContext)
     const {
-        postState:{posts,postsLoading},
+        postState:{post,posts,postsLoading},
         getPosts,
-        setShowAddPostModal
+        setShowAddPostModal,
+        showToast:{show,message,type},
+        setShowToast
     } = useContext(PostContext)
 
     useEffect(() => {
@@ -33,7 +37,7 @@ const Dashboard = () => {
         <>
             <Card className='text-center'>
                 <Card.Header as='h1'>
-                    Hi {username}
+                    Hi you, {username}
                 </Card.Header>
                 <Card.Body>
                     <Card.Title>
@@ -42,7 +46,7 @@ const Dashboard = () => {
                     <Card.Text>
                         Click the button below to track your first skill to learn
                     </Card.Text>
-                    <Button variant='primary'>
+                    <Button variant='primary' onClick={setShowAddPostModal.bind(this,true)}>
                         Learn
                     </Button>
                 </Card.Body>
@@ -69,7 +73,15 @@ const Dashboard = () => {
     return (
         <>
             {body}
-            <AddPostModal></AddPostModal>
+            <AddPostModal/>
+            {post !==null && <UpdatePostModal/>}
+            {/* After post is added show toast */}
+            <Toast show={show} animation={false} style={{position:'fixed',top:'20%',right:'10px'}} className={`bg-${type} text-white`} 
+            onClose={setShowToast.bind(this,{show:false,message:'',type:null})} delay={3000} autohide>
+                <Toast.Body>
+                    <strong>{message}</strong>
+                </Toast.Body>
+            </Toast>
         </>
     )
 }

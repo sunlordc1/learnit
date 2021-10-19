@@ -6,7 +6,7 @@ import { PostContext } from '../../contexts/PostContext'
 
 const AddPostModal = () => {
     //Contexts 
-    const  {showAddPostModal,setShowAddPostModal,addPost} = useContext(PostContext)
+    const  {showAddPostModal,setShowAddPostModal,addPost,setShowToast} = useContext(PostContext)
    
  
     //State
@@ -22,6 +22,7 @@ const AddPostModal = () => {
     const onSubmit = async event =>{
         event.preventDefault();
         const {success,message} = await addPost(newPost)
+        setShowToast({show:true,message,type:success?'success':'danger'})
         resetAddPostData()
     }
     const resetAddPostData = ()=>{
