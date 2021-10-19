@@ -17,6 +17,8 @@ https://youtu.be/rgFd17fyM4A
         > npm install axios
     - Cài react-router-dom để tạo liên kết chuyển màn hình các component:
         > npm install react-router-dom
+    - Cài Cookie
+        > npm i js-cookie
 # Server:
 - Sau khi cài package viết route
 - Tạo model(lớp schema của mongoose) 

@@ -16,7 +16,6 @@ const Auth = ({authRoute}) => {
         </Spinner>
     )
     else if (isAuthenticated){
-        console.log('authen r')
         return <Redirect to='/dashboard'/>
     }
     else{
